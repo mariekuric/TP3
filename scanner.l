@@ -7,7 +7,7 @@ L [[:alpha:]]
 D [0-9]
 LD [[:alnum:]]
 S [[:space:]]
-O [[:^alnum:]]{-}[[:space:]]
+O [[:graph:]]{-}[[:alnum:]]
 programa [Pp][Rr][Oo][Gg][Rr][Aa][Mm][Aa]
 variables [Vv][Aa][Rr][Ii][Aa][Bb][Ll][Ee][Ss]
 codigo [Cc][Oo][Dd][Ii][Gg][Oo]
@@ -24,5 +24,8 @@ definir [Dd][Ee][Fi][Ii][Nn][Ii][Rr]
 {fin}		return FIN;
 {leer}		return LEER;
 {escribir}	return ESC;
-{definir]	return DEF;
+{definir}	return DEF;
+{D}+{O}+	return ERROR_C;
+{L}+{O}+	return ERROR_I;
+{O}+		return ERROR_L;
 %%
