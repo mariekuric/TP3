@@ -24,6 +24,17 @@ definir [Dd][Ee][Fi][Ii][Nn][Ii][Rr]
 {fin}		return FIN;
 {leer}		return LEER;
 {escribir}	return ESC;
+"+"         return OP_SUM
+"-"         return OP_REST
+"*"         return OP_MULT
+"/"         return OP_DIV
+
+":="        return ASIG
+"("         return PAR_I
+")"         return PAR_D
+","	        return COMA
+"."	        return PTO
+"//".*\n    ;
 {definir}	return DEF;
 {D}+{O}+	return ERROR_C;
 {L}+{O}+	return ERROR_I;
